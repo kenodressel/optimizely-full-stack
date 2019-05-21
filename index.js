@@ -109,7 +109,7 @@ app.get('/', (req, res) => {
   res.send(req.session.userID ? `Hello ${req.session.userID}!` : 'Hi!')
 })
 
-app.get('/ab', (req, res) => {
+app.post('/ab', (req, res) => {
   if (req.body.userID === 'var1') {
     console.log('Forcing variation_1')
     optimizelyClientInstance.setForcedVariation(
@@ -145,7 +145,7 @@ app.get('/ab', (req, res) => {
   })
 })
 
-app.get('/feature', (req, res) => {
+app.post('/feature', (req, res) => {
   const enabled = optimizelyClientInstance.isFeatureEnabled('feature',
     req.body.userID, {
       gender: req.body.gender,
@@ -164,7 +164,7 @@ app.get('/feature', (req, res) => {
   })
 })
 
-app.get('/rollout', (req, res) => {
+app.post('/rollout', (req, res) => {
   const enabled = optimizelyClientInstance.isFeatureEnabled('rollout',
     req.body.userID, {
       gender: req.body.gender,
