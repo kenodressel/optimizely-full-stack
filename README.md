@@ -15,13 +15,13 @@ POST '/set/user', body: { "userID": String } --> Sets userID to session
 ```
 
 ```
-GET '/ab', body: { "userID": String, "gender": "m" or "f" } --> activates ab test and shows variation
+POST '/ab', body: { "userID": String, "gender": "m" or "f" } --> activates ab test and shows variation
 ```
 
 ```
-GET '/feature', body { "userID": String, "gender": "m" or "f" } --> activates feature test and shows feature value
+POST '/feature', body { "userID": String, "gender": "m" or "f" } --> activates feature test and shows feature value
 ```
 
 ```
-GET '/rollout', body { "userID": String, "gender": "m" or "f" } --> activates feature rollout and shows feature value
+POST '/rollout', body { "userID": String, "gender": "m" or "f" } --> activates feature rollout and shows feature value
 ```
